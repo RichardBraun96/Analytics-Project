@@ -48,10 +48,11 @@
         if choice == 1:
             print("\n")
             abweichung = ExcelRead["Temperatur"].std()
+            mittel = ExcelRead["Temperatur"].mean()
             print("Die Standardabweichnung beträgt: %.2f" % abweichung)
             print("Das Maximum ist: ", ExcelRead["Temperatur"].max())
             print("Das Minimum ist: ", ExcelRead["Temperatur"].min())
-            print("Der Mittelwert: ", ExcelRead["Temperatur"].mean())
+            print("Der Mittelwert ist: %.2f" % mittel)
             print("\n")
             statistikmenu()
 
@@ -77,7 +78,7 @@
         if choice == 5:
             print("\n")
             mittel = ExcelRead["Temperatur"].mean()
-            print("Der Mittelwert: %.2f" % mittel)
+            print("Der Mittelwert ist: %.2f" % mittel)
             print("\n")
             statistikmenu()
 
@@ -102,7 +103,7 @@
             einlesen.save("/Users/sebastianpink/Desktop/Test.xlsx")
             print("Der letzte Eintrag wurde gelöscht")
             print("\n")
-            statistikmenu()
+            datenaendern()
 
         if choice == 2:
             rowmax = tab1.max_row+1
@@ -112,7 +113,7 @@
             einlesen.save("/Users/sebastianpink/Desktop/Test.xlsx")
             print("Neuer Eintrag wurde hinzugefügt")
             print("\n")
-            statistikmenu()
+            datenaendern()
 
         if choice == 3:
             print("\n")
@@ -121,7 +122,7 @@
             tab1.delete_rows(richtigzeile)
             einlesen.save("/Users/sebastianpink/Desktop/Test.xlsx")
             print("\n")
-            statistikmenu()
+            datenaendern()
 
         if choice == 4:
             hauptmenu()
